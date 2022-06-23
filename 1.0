@@ -1,0 +1,18 @@
+# requests user input for price, discount amount, and tax
+price = float(input('Enter Price $- '))
+disCount = float(input('Discount %- '))
+tax = float(input('Enter tax %- '))
+
+# converts whole number into percent/decimal
+discountPercent = disCount / 100
+taxPercent = tax / 100
+
+# returns appliable discount and tax amount
+discountDecimal = price * discountPercent
+applyTax = price * taxPercent
+
+# cleans up decimals
+subTotal = price - discountDecimal
+final = discountDecimal * taxPercent
+
+print(subTotal + applyTax - final)
